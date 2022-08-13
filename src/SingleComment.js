@@ -13,9 +13,9 @@ const SingleComment = props => {
           {props.name}
         </a>
         <div className="metadata">
-          <span className="date">Today at 5:00PM</span>
+          <span className="date">{props.date}</span>
         </div>
-        <div className="text">it's good</div>
+        <div className="text">{props.text}</div>
       </div>
     </div>
   );
