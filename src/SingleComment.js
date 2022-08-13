@@ -1,7 +1,8 @@
 import React from "react";
 import avatar from "./image/avatar.png";
 
-const SingleComment = () => {
+const SingleComment = props => {
+  console.log(props);
   return (
     <div className="comment">
       <a href="/" className="avatar">
@@ -9,7 +10,7 @@ const SingleComment = () => {
       </a>
       <div className="content">
         <a href="/" className="author">
-          Sarah
+          {props.name}
         </a>
         <div className="metadata">
           <span className="date">Today at 5:00PM</span>
