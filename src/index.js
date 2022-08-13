@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import SingleComment from "./SingleComment";
 import UserCard from "./UserCard";
 import HemisphereDisplay from "./HemisphereDisplay";
+import App from "./App";
 
 // const App = () => {
 //   return (
@@ -24,41 +25,43 @@ import HemisphereDisplay from "./HemisphereDisplay";
 //   );
 // };
 
-class App extends React.Component {
-  state = { latitude: null, errorMessage: "" }; // intilizing latitude and errorMsg as null
+// class App extends React.Component {
+//   render() {
+//     <App />;
+//   }
+//   // state = { latitude: null, errorMessage: "" }; // intilizing latitude and errorMsg as null
 
-  componentDidMount() {
-    console.log("compomentDidMount");
-    window.navigator.geolocation.getCurrentPosition(
-      position => {
-        this.setState({ latitude: position.coords.latitude }); // updating our current location latitude with setState
-      },
-      error => {
-        this.setState({ errorMessage: error.message });
-      }
-    );
-  }
+//   // componentDidMount() {
+//   //   console.log("compomentDidMount");
+//   //   window.navigator.geolocation.getCurrentPosition(
+//   //     position => {
+//   //       this.setState({ latitude: position.coords.latitude }); // updating our current location latitude with setState
+//   //     },
+//   //     error => {
+//   //       this.setState({ errorMessage: error.message });
+//   //     }
+//   //   );
+//   // }
 
-  componentDidUpdate() {
-    console.log("compomentDidUpdate");
-  }
+//   // componentDidUpdate() {
+//   //   console.log("compomentDidUpdate");
+//   // }
 
-  render() {
-    console.log(this.state);
-    if (!this.state.latitude) {
-      return <div>{this.state.errorMessage}</div>;
-    }
-    if (this.state.latitude) {
-      return (
-        <div>
-          <HemisphereDisplay latitude={this.state.latitude} />
-        </div>
-      );
-    } else {
-      return <div>Loading....</div>;
-    }
-  }
-}
-export {};
+//   // render() {
+//   //   console.log(this.state);
+//   //   if (!this.state.latitude) {
+//   //     return <div>{this.state.errorMessage}</div>;
+//   //   }
+//   //   if (this.state.latitude) {
+//   //     return (
+//   //       <div>
+//   //         <HemisphereDisplay latitude={this.state.latitude} />
+//   //       </div>
+//   //     );
+//   //   } else {
+//   //     return <div>Loading....</div>;
+//   //   }
+//   // }
+// }
 
 ReactDOM.render(<App />, document.querySelector("#root"));
